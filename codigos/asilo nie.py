@@ -1,4 +1,4 @@
-#Prueba de playwright
+#asilo nie
 from playwright.sync_api import sync_playwright
 
 with sync_playwright() as p:
@@ -17,7 +17,16 @@ with sync_playwright() as p:
     #Pasa a la siguiente pagina
 
     #Selecionar tranmites
-    pagina.select_option("select[name='tramiteGrupo[0]']", "20")
+    pagina.select_option("select[name='tramiteGrupo[0]']", "4104")
+
+    #Presiona el aceptar del formulario
+    pagina.click("#btnAceptar")
+
+    #Pasar la pagina
+    pagina.click("#btnEntrar")
+
+    #selecionar NIE
+    pagina.check("input[value='N.I.E']")
 
     # Escribir en el buscador
     #pagina.fill("textarea[name='q']", "Hola desde Playwright en Arch Linux")
@@ -28,4 +37,4 @@ with sync_playwright() as p:
     # Esperar 5 segundos para ver el resultado
     pagina.wait_for_timeout(3000)
 
-    #navegador.close()
+    navegador.close()
